@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set Operations</title>
+</head>
+<body>
+
+<script>
+// Task 1: Remove Duplicates from an Array
+function removeDuplicatesFromArray(arr) {
+    return [...new Set(arr)];
+}
+
+const numbers = [1, 2, 2, 3, 3, 4, 5, 5];
+console.log(removeDuplicatesFromArray(numbers)); // Output: [1, 2, 3, 4, 5]
+
+// Task 2: Find Common Elements between Two Arrays
+function findCommonElements(array1, array2) {
+    const set1 = new Set(array1);
+    const commonElements = new Set(array2.filter(item => set1.has(item)));
+    return Array.from(commonElements);
+}
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(findCommonElements(array1, array2)); // Output: [3, 4, 5]
+
+// Task 3: Count Unique Characters in a String
+function countUniqueCharacters(text) {
+    const characters = new Set(text);
+    return characters.size;
+}
+
+const text = 'hello';
+console.log(countUniqueCharacters(text)); // Output: 4
+</script>
+
+</body>
+</html>

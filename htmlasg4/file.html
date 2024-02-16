@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Example</title>
+  <script>
+    function processForm() {
+     
+      var name = document.getElementById('name').value;
+      var designation=document.getElementById('designation').value;
+      var message = document.getElementById('message').value;
+
+     
+      alert('Name: ' + name +'\nDesignation:'+designation+ '\nMessage: ' + message);
+    }
+  </script>
+</head>
+<body>
+
+  
+  <form onsubmit="processForm(); return false;">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+<br>
+    <label for="name">Designation:</label>
+    <input type="text" id="designation" name="designation" required>
+
+    <br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+
+    <br>
+
+    <input type="submit" value="Submit">
+
+  </form>
+
+</body>
+</html>

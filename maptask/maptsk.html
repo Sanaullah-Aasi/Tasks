@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Square Numbers</title>
+</head>
+<body>
+
+<script>
+//Task 1: Squares of Numbers
+// Example number 1
+function squareNumbers(numbers){
+    const squareMap = new Map();
+
+    numbers.forEach(number => {
+        squareMap.set(number, number * number);  
+    });
+
+    return squareMap;
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const squareMap = squareNumbers(numbers);
+
+// Convert Map to Array of values
+const squaredNumbers = Array.from(squareMap.values());
+
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+
+// Example number 2
+function sqn2(nums){
+    const sqmap = new Map();
+
+    nums.forEach(num => {
+        sqmap.set(num, num * num);
+    });
+
+    return sqmap;
+}
+
+const nums = [5, 6, 2, 3, 6, 5, 7];
+const sqmap = sqn2(nums);
+const sqns = Array.from(sqmap.values());
+console.log(sqns);
+
+//Task 2: Capitalize Names
+function capitalizeNames(names) {
+    const capitalizedNamesMap = new Map();
+
+    names.forEach(name => {
+        capitalizedNamesMap.set(name, name.charAt(0).toUpperCase() + name.slice(1));
+    });
+
+    return capitalizedNamesMap;
+}
+
+const names = ['john', 'jane', 'bob'];
+const capitalizedNamesMap = capitalizeNames(names);
+
+// Convert Map values to Array
+const capitalizedNamesArray = Array.from(capitalizedNamesMap.values());
+
+console.log(capitalizedNamesArray); // Output: ['John', 'Jane', 'Bob']
+
+//Task 3: Array of Object Properties
+//Given an array of objects, create a new array containing a specific property from each object.
+function getPropertyFromArrayObjects(arr, property) {
+    const propertyMap = new Map();
+
+    arr.forEach((obj, index) => {
+        propertyMap.set(index, obj[property]);
+    });
+
+    return Array.from(propertyMap.values());
+}
+
+const people = [ { name: 'John', age: 30 }, { name: 'Jane', age: 25 }, { name: 'Bob', age: 40 } ];
+
+const names2 = getPropertyFromArrayObjects(people, 'name');
+console.log(names); // Output: ['John', 'Jane', 'Bob']
+
+const ages = getPropertyFromArrayObjects(people, 'age');
+console.log(ages); // Output: [30, 25, 40]
+
+</script>
+
+</body>
+</html>
